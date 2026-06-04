@@ -1,80 +1,72 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="min-h-screen flex items-center justify-center p-6 relative">
-    <button @click="darkMode = !darkMode" class="absolute top-8 right-8 p-2 rounded-full bg-white/50 dark:bg-black/20 hover:bg-black/10 dark:hover:bg-white/10 smooth-transition">
-        <svg x-show="!darkMode" class="w-5 h-5 text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
-        <svg x-show="darkMode" x-cloak class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-    </button>
-
-    <div class="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div class="hidden lg:flex flex-col text-left pr-10">
-            <div class="flex items-center gap-2 mb-10">
-                <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">P</div>
-                <span class="text-2xl font-bold text-blue-700 dark:text-blue-500">Portal Polibatam</span>
+<div class="min-h-[calc(100vh-4rem)] flex">
+    <!-- Left Side - Branding (Hidden on mobile) -->
+    <div class="hidden lg:flex lg:w-1/2 relative items-center justify-center p-12">
+        <div class="max-w-lg">
+            <div class="flex items-center gap-3 mb-8">
+                <div class="w-16 h-16 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg">
+                    <i data-lucide="layout" class="w-10 h-10 text-white"></i>
+                </div>
+                <span class="text-3xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                    Portal Polibatam
+                </span>
             </div>
-            <h1 class="text-4xl font-bold mb-4">Selamat Datang Kembali</h1>
-            <p class="text-lg text-slate-600 dark:text-slate-400 mb-8">Akses semua layanan Polibatam dalam satu portal yang terintegrasi.</p>
-            
-            <ul class="space-y-6">
-                <li class="flex items-start gap-4">
-                    <div class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center mt-1"><div class="w-2.5 h-2.5 rounded-full bg-blue-600 dark:bg-blue-400"></div></div>
-                    <div><h4 class="font-bold">Akses Cepat</h4><p class="text-sm text-slate-500 dark:text-slate-400">Satu portal untuk semua layanan</p></div>
-                </li>
-                <li class="flex items-start gap-4">
-                    <div class="w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900/50 flex items-center justify-center mt-1"><div class="w-2.5 h-2.5 rounded-full bg-purple-600 dark:bg-purple-400"></div></div>
-                    <div><h4 class="font-bold">Personalisasi</h4><p class="text-sm text-slate-500 dark:text-slate-400">Tandai layanan favorit Anda</p></div>
-                </li>
-                <li class="flex items-start gap-4">
-                    <div class="w-8 h-8 rounded-full bg-pink-100 dark:bg-pink-900/50 flex items-center justify-center mt-1"><div class="w-2.5 h-2.5 rounded-full bg-pink-600 dark:bg-pink-400"></div></div>
-                    <div><h4 class="font-bold">Aman & Terpercaya</h4><p class="text-sm text-slate-500 dark:text-slate-400">Portal resmi Polibatam</p></div>
-                </li>
-            </ul>
+            <h2 class="text-4xl font-bold mb-4">Selamat Datang Kembali</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">Akses semua layanan Polibatam dalam satu portal yang terintegrasi.</p>
         </div>
+    </div>
 
-        <div class="bg-white/80 dark:bg-slate-800/90 backdrop-blur-xl p-10 rounded-[2rem] shadow-2xl border border-white/20 dark:border-slate-700 w-full max-w-md mx-auto transform hover:-translate-y-1 smooth-transition">
-            <h2 class="text-3xl font-bold mb-2">Masuk</h2>
-            <p class="text-slate-500 dark:text-slate-400 mb-8 text-sm">Masukkan Akun Anda untuk melanjutkan</p>
+    <!-- Right Side - Login Form -->
+    <div class="w-full lg:w-1/2 flex items-center justify-center p-8 relative z-10">
+        <div class="w-full max-w-md bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl border border-gray-200 dark:border-gray-700 p-8 shadow-xl">
+            
+            <div class="lg:hidden flex items-center justify-center gap-3 mb-8">
+                <div class="w-12 h-12 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center">
+                    <i data-lucide="layout" class="w-7 h-7 text-white"></i>
+                </div>
+                <span class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Portal Polibatam</span>
+            </div>
 
-            <form action="#" method="POST">
-                <div class="mb-5">
-                    <label class="block text-sm font-semibold mb-2">Username</label>
+            <h1 class="text-3xl font-bold mb-2">Masuk</h1>
+            <p class="text-gray-600 dark:text-gray-300 mb-6">Masukkan kredensial Anda untuk melanjutkan</p>
+
+            <form method="POST" action="{{ route('login.post') }}" class="space-y-4">
+                @csrf
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Username</label>
                     <div class="relative">
-                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
-                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
-                        </div>
-                        <input type="text" class="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none smooth-transition" placeholder="Masukkan username">
+                        <i data-lucide="user" class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"></i>
+                        <input type="text" name="username" class="w-full pl-10 pr-4 py-3 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all placeholder-gray-400 text-gray-900 dark:text-white" placeholder="Masukkan username" required>
                     </div>
                 </div>
-                <div class="mb-6">
-                    <label class="block text-sm font-semibold mb-2">Password</label>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Password</label>
                     <div class="relative">
-                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
-                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-                        </div>
-                        <input type="password" class="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none smooth-transition" placeholder="Masukkan password">
+                        <i data-lucide="lock" class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"></i>
+                        <input type="password" name="password" class="w-full pl-10 pr-4 py-3 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all placeholder-gray-400 text-gray-900 dark:text-white" placeholder="Masukkan password" required>
                     </div>
                 </div>
-                
-                <div class="flex items-center justify-between mb-8">
-                    <label class="flex items-center text-sm cursor-pointer">
-                        <input type="checkbox" class="rounded border-slate-300 text-blue-600 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 mr-2 bg-transparent dark:border-slate-600">
-                        Ingat saya
+
+                <div class="flex items-center justify-between">
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" name="remember" class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                        <span class="text-sm text-gray-700 dark:text-gray-300">Ingat saya</span>
                     </label>
-                    <a href="#" class="text-sm font-semibold text-blue-600 dark:text-blue-400 hover:underline">Lupa password?</a>
+                    <a href="#" class="text-sm text-blue-600 dark:text-blue-400 hover:underline">Lupa password?</a>
                 </div>
 
-                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl shadow-lg hover:shadow-blue-500/30 transform hover:-translate-y-0.5 smooth-transition">
+                <button type="submit" class="w-full py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg hover:shadow-lg transition-all transform hover:-translate-y-0.5 font-medium">
                     Masuk
                 </button>
             </form>
-            
-            <p class="text-center mt-6 text-sm text-slate-600 dark:text-slate-400">
-                Belum punya akun? <a href="{{ route('register') }}" class="font-bold text-blue-600 dark:text-blue-400 hover:underline">Daftar sekarang</a>
-            </p>
-            
-            <div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-700 text-center">
-                <a href="{{ route('home') }}" class="inline-block mt-4 text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400">&larr; Kembali ke beranda</a>
+
+            <div class="mt-6 text-center">
+                <p class="text-gray-600 dark:text-gray-300">
+                    Belum punya akun? <a href="{{ route('register') }}" class="text-blue-600 dark:text-blue-400 hover:underline font-medium">Daftar sekarang</a>
+                </p>
             </div>
         </div>
     </div>
